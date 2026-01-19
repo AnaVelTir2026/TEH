@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Total Eclipse of the Heart – 12 agosto 2026</title>
+<meta content="Celebración íntima del eclipse total en Barreiros por el 50º de Ana y 25º aniversario de Xalo y Ana." name="description"/>
+<meta content="noindex, nofollow" name="robots"/>
+<style>
+    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#60a5fa; --accent-2:#22d3ee; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; color:var(--text);
+           background: radial-gradient(1200px 800px at 80% -10%, #1f2937 0%, var(--bg) 45%), radial-gradient(800px 600px at -10% 110%, #0b1220 0%, #0b1220 50%, var(--bg) 100%);
+           min-height:100vh; line-height:1.6; }
+    .wrap { max-width:1100px; margin:0 auto; padding:32px 20px 80px; }
+    header { text-align:center; padding:40px 16px 28px; }
+    .pill { display:inline-flex; gap:8px; align-items:center; padding:6px 12px; border:1px solid #374151; border-radius:999px; color:var(--muted); font-size:14px; background:rgba(255,255,255,.02); }
+    h1 { margin:16px 0 8px; font-size:clamp(28px,4vw,40px); line-height:1.12; letter-spacing:.2px; background:linear-gradient(90deg,#fff,#dbeafe,#a5f3fc); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .subtitle { color:var(--muted); font-size:16px; max-width:750px; margin:.4rem auto 0; }
+    .countdown { margin:16px auto 0; display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border:1px solid #374151; border-radius:999px; color:#f3f4f6; background:rgba(255,255,255,.03); font-weight:600; }
+    .countdown small { color:var(--muted); font-weight:500; }
+    .grid { display:grid; grid-template-columns:1fr; gap:18px; margin-top:28px; }
+    @media (min-width:980px){ .grid{ grid-template-columns:1.4fr 1fr; } }
+    .card { background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); border:1px solid #1f2937; border-radius:14px; padding:18px; box-shadow:0 10px 30px rgba(0,0,0,.25); }
+    .card h2 { font-size:18px; margin:0 0 8px; color:#f3f4f6; }
+    .meta { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .item { background:#0b1220; border:1px solid #1f2937; border-radius:12px; padding:12px; }
+    .item .label{ font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+    .item .value{ font-size:16px; margin-top:6px; }
+    .agenda li{ margin:6px 0; }
+    .cta{ display:inline-block; padding:12px 16px; background:linear-gradient(90deg, var(--accent), var(--accent-2)); color:#06243b; font-weight:700; border:none; border-radius:12px; text-decoration:none; margin-top:8px; box-shadow:0 8px 20px rgba(34,211,238,.25); }
+    .cta:hover{ transform: translateY(-1px); }
+    .note{ font-size:14px; color:var(--muted); margin-top:10px; }
+    footer{ text-align:center; font-size:13px; color:var(--muted); margin-top:28px; }
+    .divider{ height:1px; background:#1f2937; margin:18px 0; }
+    #wmts{ width:100%; height:320px; border:1px solid #1f2937; border-radius:12px; }
+
+    /* --- Sección Alojamientos (dos columnas: lista izquierda + mapa derecha) --- */
+    #lodging { display:grid; grid-template-columns: 1fr; gap:18px; }
+    @media (min-width: 940px){ #lodging{ grid-template-columns: 1fr 1.2fr; align-items: start; } }
+    #lodging-list { list-style:none; padding:0; margin:0; }
+    #lodging-list li { padding:10px 12px; border:1px solid #1f2937; border-radius:12px; background:#0b1220; margin-bottom:10px; cursor:pointer; display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+    #lodging-list li:hover{ outline:1px solid #374151; background:#0d1525; }
+    #lodging-list li strong{ color:#f3f4f6; font-weight:700; }
+    #lodging-list .type{ font-weight:700; font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid transparent; }
+    #lodging-map{ width:100%; height:520px; border:1px solid #1f2937; border-radius:12px; }
+
+    /* Popup más ancho, pequeño y sencillo */
+    .popup { position: absolute; transform: translate(-50%, -110%); padding:10px 12px; border-radius:10px; background:#0b1220; border:1px solid #1f2937; box-shadow:0 6px 18px rgba(0,0,0,.25); font-size:13px; line-height:1.35; color:#e5e7eb; min-width: 220px; max-width: 280px; }
+    .popup strong { font-size:13.5px; color:#f3f4f6; }
+    .popup .small { font-size:12px; color:#9ca3af; }
+
+    .floating-fit { padding: 10px 14px; border-radius: 999px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color:#06243b; font-weight:800; border:none; box-shadow:0 8px 16px rgba(34,211,238,.25); cursor:pointer; }
+  
+/* Ajustes responsivos visor IGN */
+/* Botón volver arriba */
+#btnBackTop{ position:fixed; right:16px; bottom:16px; z-index:3000; padding:10px 12px; border-radius:999px; border:1px solid #374151; background:linear-gradient(90deg, var(--accent), var(--accent-2)); color:#06243b; font-weight:800; box-shadow:0 8px 16px rgba(34,211,238,.25); cursor:pointer; opacity:0; pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+#btnBackTop.show{ opacity:1; pointer-events:auto; }
+#btnBackTop:hover{ transform:translateY(-2px); }
+
+/* Hipervínculos más claros (mejor contraste) */
+.wrap a:not(.cta){ color:#93c5fd; }
+.wrap a:not(.cta):hover{ color:#bfdbfe; }
+.note a{ color:#a5b4fc; }
+.note a:hover{ color:#c7d2fe; }
+.subtitle a{ color:#93c5fd; }
+.subtitle a:hover{ color:#bfdbfe; }
+
+
+/* Lista de alojamientos con nota/descripción */
+#lodging-list li{ display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
+#lodging-list li .row{ width:100%; display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+#lodging-list li .desc{ font-size:13px; color:var(--muted); }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<span class="pill">🌒 Evento privado</span>
+<h1>Total Eclipse of the Heart</h1>
+<p class="subtitle">El año 2026 ocurre una conjunción astral al coincidir el 50 cumpleaños de Ana, el 25 aniversario de Xalo y Ana, y el eclipse total del norte de España.<br/>
+Nos encantaría celebrar esta coincidencia y nuestra amistad el 12 de agosto viviendo juntos el eclipse total desde Barreiros.<br/>
+Si os animáis a pasar más días en Barreiros, preparamos actividades para hacer por la zona.</p>
+<div aria-live="polite" class="countdown">
+<span>⏳ <span id="count-text">Calculando…</span></span>
+<small>(objetivo: 12 ago 2026 · 19:30:44 CEST)</small>
+</div>
+</header><nav aria-label="Navegación interna" id="mini-nav" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0 16px;"><a href="#ubicacion" style="padding:6px 10px;border:1px solid #374151;border-radius:999px;color:#9ca3af;text-decoration:none;background:rgba(255,255,255,.02)">Ubicación</a><a href="#alojamientos" style="padding:6px 10px;border:1px solid #374151;border-radius:999px;color:#9ca3af;text-decoration:none;background:rgba(255,255,255,.02)">Alojamientos</a><a href="#eclipse-2026" style="padding:6px 10px;border:1px solid #374151;border-radius:999px;color:#9ca3af;text-decoration:none;background:rgba(255,255,255,.02)">Eclipse</a></nav>
+<div class="grid">
+<section class="card">
+<h2>Información clave</h2>
+<div class="meta">
+<div class="item"><div class="label">Fecha</div><div class="value">Miércoles, 12 ago 2026</div></div>
+<div class="item"><div class="label">Lugar</div><div class="value">San Cosme de Barreiros, Lugo</div></div>
+</div>
+<div class="divider"></div>
+<h2>Agenda</h2>
+<ul class="agenda">
+<li>12:00 — Pequeña excursión al entorno natural San Estevo do Ermo</li>
+<li>14:00 — Comida de fraternidad</li>
+<li>18:00 — Nos vamos al lugar de observación del eclipse</li>
+<li>19:30:44 — Inicio del eclipse</li>
+<li>20:27:48 — Eclipse total</li>
+</ul>
+<div style="text-align:center;"><a class="cta" href="https://forms.gle/Z3nAtYhVW1zRupxH8" rel="noopener" target="_blank">Confirmar asistencia</a></div>
+<p class="note">Por favor confirma tu asistencia cuanto antes.</p>
+<div class="divider"></div>
+</section>
+<aside class="card" id="ubicacion">
+<h2>Ubicación</h2>
+<div class="controls">
+<label for="baseLayer">Capa base:</label>
+<select aria-label="Seleccionar capa base del mapa" id="baseLayer">
+<option selected="" value="raster">Mapa</option>
+<option value="pnoa">Imagen</option>
+</select>
+</div>
+<div aria-label="Mapa IGN (WMTS)" id="wmts" role="region"></div>
+<p class="note">Si no se carga el mapa, abre el respaldo en <a href="https://www.ign.es/iberpix/visor/" rel="noopener" target="_blank">Iberpix</a>.</p>
+<div class="attribution">© Instituto Geográfico Nacional (IGN) / CNIG — Servicios WMTS "mapa-raster" y "pnoa-ma"</div>
+<div class="divider"></div>
+
+
+</aside>
+</div>
+<!-- Sección: Alojamientos (dos columnas) -->
+<section class="card" id="alojamientos" style="margin-top:36px;border-top:1px solid #1f2937;padding-top:24px;">
+<h2>Alojamientos recomendados</h2>
+<p class="note">En casa no podemos alojarnos todos, así que os recomendamos varios alojamientos por la zona que en su mayoría aún tienen disponibilidad, aunque todo está ya bastante ocupado. Cualquier alojamiento de Foz o Ribadeo también está cerca. En la web <a href="https://apartagal.com/" rel="noopener" target="_blank">Apartagal</a> hay bastantes, aunque a veces piden estancia mínima de una semana. En caso de necesidad siempre puede montarse la tienda de camping en la finca.</p>
+<div id="lodging">
+<!-- Columna izquierda: lista plana (título + tipo con color) -->
+<div>
+<ul id="lodging-list"></ul>
+</div>
+<!-- Columna derecha: mapa -->
+<div>
+<div aria-label="Mapa con alojamientos cercanos" id="lodging-map"></div>
+<div style="display:flex;justify-content:flex-end;margin:8px 0 6px;">
+<button class="floating-fit" id="btnFitFloating" title="Centrar todo">Centrar todo</button>
+</div>
+<p class="note">Base fija: IGN Base. Usa el botón “Centrar todo” para reencuadrar.</p>
+<div class="attribution">© Instituto Geográfico Nacional (IGN) / CNIG — WMTS: "ign-base" (<code>IGNBaseTodo</code>) matriz <code>GoogleMapsCompatible</code>.</div>
+</div>
+</div>
+</section>
+<section class="card" id="eclipse-2026" style="margin-top:36px;"><h2>Eclipse total 12 de agosto de 2026</h2><p>Visualizador oficial del IGN para explorar el eclipse total: totalidad, oscurecimiento, duración y capas geoespaciales.</p><div style="text-align:center;margin-top:12px;"><a class="cta" href="https://visualizadores.ign.es/eclipses/2026" rel="noopener" target="_blank">Abrir visualizador del IGN</a></div></section>
+<footer>
+      © <span id="y"></span> Xalo y Ana · Esta página es privada y se comparte solo con las personas invitadas.
+    </footer>
+</div>
+<!-- Botón flotante para fit global -->
+<!-- OpenLayers CSS/JS -->
+<link href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+<script>
+    // ====== Cuenta atrás ======
+    (function countdown(){
+      const out = document.getElementById('count-text');
+      const target = new Date('2026-08-12T19:30:44+02:00').getTime();
+      function tick(){
+        const diff = target - Date.now();
+        if (diff <= 0){ out.textContent = '¡Comienza el eclipse ahora (19:30:44)!'; return; }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        out.textContent = `${d} d ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+      }
+      tick(); setInterval(tick, 1000);
+    })();
+
+    // ====== Visor WMTS (mapa principal) ======
+    (function wmts(){
+      const center = [-805313.5884244614, 5396874.717367657];
+      const zoom = 13.55;
+      const services = {
+        raster: { url: 'https://www.ign.es/wmts/mapa-raster', layer: 'MTN', matrixSet: 'GoogleMapsCompatible', format: 'image/jpeg', style: 'default' },
+        pnoa:   { url: 'https://www.ign.es/wmts/pnoa-ma',     layer: 'OI.OrthoimageCoverage', matrixSet: 'GoogleMapsCompatible', format: 'image/jpeg', style: 'default' }
+      };
+      let map;
+      function createWMTSLayer(cfg){
+        const capsUrl = `${cfg.url}?service=WMTS&request=GetCapabilities&version=1.0.0`;
+        return fetch(capsUrl).then(r=>r.text()).then(txt=>{
+          const caps = new ol.format.WMTSCapabilities().read(txt);
+          const options = ol.source.WMTS.optionsFromCapabilities(caps, { layer: cfg.layer, matrixSet: cfg.matrixSet, format: cfg.format, style: cfg.style });
+          return new ol.layer.Tile({ source: new ol.source.WMTS(options) });
+        });
+      }
+      createWMTSLayer(services.raster).then(layer=>{
+        map = new ol.Map({ target: 'wmts', layers: [layer], view: new ol.View({ center, zoom }) });
+      }).catch(()=>{
+        document.getElementById('wmts').innerHTML = '<p class="note">No se pudo cargar el servicio WMTS principal.</p>';
+      });
+      document.getElementById('baseLayer').addEventListener('change', async (e)=>{
+        const key = e.target.value; try{ const newLayer = await createWMTSLayer(services[key]); map.getLayers().setAt(0, newLayer);}catch{}
+      });
+    })();
+
+    // ====== Datos de alojamientos ======
+    const LODGINGS = [
+  { id:1, nombre:"O Lar de Yago", tipo:"Apartamento", etiquetas:[], web:"https://www.booking.com/hotel/es/lar-de-yago-barreiros.es.html?aid=2311236&label=es-es-booking-desktop-onknyt5TBrS8m9RnGd%2A6fgS652829001115%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-65526620%3Alp9061041%3Ali%3Adec%3Adm&sid=2cddf24d2963ff52f8b71083098460e5&all_sr_blocks=978928001_370166465_2_0_0&checkin=2026-08-11&checkout=2026-08-16&dest_id=-372684&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=5&highlighted_blocks=978928001_370166465_2_0_0&hpos=5&matching_block_id=978928001_370166465_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=978928001_370166465_2_0_0__126000&srepoch=1768681427&srpvid=fed68f5f71340a08&type=total&ucfs=1&", tel:"", lon:-7.23514209, lat:43.55177216, nota:"" },
+  { id:2, nombre:"Xaiñas 24", tipo:"Apartamento", etiquetas:[], web:"https://bookonline.pro/es/property/399685", tel:"", lon:-7.26007671, lat:43.52643936, nota:"" },
+  { id:3, nombre:"Finca Galea", tipo:"Hotel", etiquetas:[], web:"https://casaruralfincagalea.com/", tel:"", lon:-7.40903695, lat:43.53343493, nota:"" },
+  { id:4, nombre:"Os tres teixos", tipo:"Hotel", etiquetas:[], web:"https://www.ostresteixos.es/", tel:"", lon:-7.37226076, lat:43.55594090, nota:"" },
+  { id:5, nombre:"Hotel Ría do Masma", tipo:"Hotel", etiquetas:[], web:"https://hotelriadomasma.com/", tel:"", lon:-7.24276368, lat:43.56564599, nota:"" },
+  { id:6, nombre:"Hotel Rías Altas", tipo:"Hotel", etiquetas:[], web:"https://via.eviivo.com/HotelRiasAltas27792", tel:"", lon:-7.21673700, lat:43.54450541, nota:"Mínimo de 2 noches, ahora mismo completo" },
+  { id:7, nombre:"Cabanas da Barcela", tipo:"Apartamento", etiquetas:[], web:"https://cabanasdabarcela.com/", tel:"", lon:-7.24449975, lat:43.54999350, nota:"De momento no hay disponibilidad pero si se libera algo, me avisan" },
+  { id:8, nombre:"A Lume manso", tipo:"Hotel", etiquetas:[], web:"https://alumemanso.com/", tel:"", lon:-7.23672379, lat:43.55407164, nota:"No abren el calendario de disponibilidad hasta marzo" },
+  { id:9, nombre:"Casa Aida", tipo:"Apartamento", etiquetas:[], web:"https://www.booking.com/hotel/es/casa-aida-foz.es.html?label=es-es-booking-desktop-onknyt5TBrS8m9RnGd*6fgS652829001115%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-65526620%3Alp9061041%3Ali%3Adec%3Adm&aid=2311236&ucfs=1&checkin=2026-08-11&checkout=2026-08-13&dest_id=-382803&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=977b96fbd337059a&srepoch=1768685348&matching_block_id=954716902_414267441_2_0_0&atlas_src=sr_iw_title", tel:"", lon:-7.28632561, lat:43.55168794, nota:"" },
+  { id:10, nombre:"Oca Playa de Foz", tipo:"Hotel", etiquetas:[], web:"https://www.ocahotels.com/hoteles/oca-playa-foz-hotel-spa?", tel:"", lon:-7.24772466, lat:43.57429648, nota:"" },
+  { id:11, nombre:"Camping Gaivota", tipo:"Camping", etiquetas:[], web:"https://agaivotacamping.com/", tel:"", lon:-7.20728129, lat:43.56237874, nota:"" },
+  { id:12, nombre:"Camping A Nosa Casa", tipo:"Camping", etiquetas:[], web:"https://www.campinganosacasa.com/", tel:"", lon:-7.16640540, lat:43.55377994, nota:"" },
+  { id:13, nombre:"Camping de Benquerencia", tipo:"Camping", etiquetas:[], web:"https://www.campingbenquerencia.es/", tel:"", lon:-7.19999541, lat:43.55511972, nota:"" }
+];
+
+    // ====== Colores por tipo (lista + iconos) ======
+    const TYPE_COLORS = {
+      'Hotel':   { fill:'#3B82F6', stroke:'#0B1E4B' }, // azul
+      'Apartamento': { fill:'#10B981', stroke:'#064E3B' }, // verde
+      'Camping': { fill:'#F59E0B', stroke:'#7C3D00' }, // naranja
+      'Otro':    { fill:'#A78BFA', stroke:'#3B2F5A' }  // lila
+    };
+    function getTypeColor(t){ const k=(t||'').trim(); return TYPE_COLORS[k] || TYPE_COLORS['Otro']; }
+
+    // ====== Lista plana (nombre + tipo coloreado) ======
+    (function renderList(){
+ const ul = document.getElementById('lodging-list');
+ LODGINGS.forEach(a => {
+   const li = document.createElement('li');
+   li.dataset.id = a.id;
+   const c = getTypeColor(a.tipo);
+   const tipo = a.tipo ? a.tipo : '';
+   const nota = a.nota ? `<div class="desc">${a.nota}</div>` : '';
+   li.innerHTML = `
+     <div class="row">
+       <strong>${a.nombre}</strong>
+       <span class="type" style="background:${c.fill}22;border-color:${c.fill}55;color:${c.fill}">${tipo}</span>
+     </div>
+     ${nota}
+   `;
+   ul.appendChild(li);
+ });
+})();
+
+    // ====== Mapa de alojamientos (solo IGN Base) ======
+    (function lodgingMap(){
+      const view = new ol.View({ center: [-805313.5884244614, 5396874.717367657], zoom: 12.8 });
+      const map = new ol.Map({ target: 'lodging-map', layers: [], view });
+
+      // Base única: IGN Base (con fallback OSM si hiciera falta)
+      const cfg = { url:'https://www.ign.es/wmts/ign-base', layer:'IGNBaseTodo', matrixSet:'GoogleMapsCompatible', format:'image/jpeg', style:'default' };
+      function createIgnBase(){
+        const capsUrl = `${cfg.url}?service=WMTS&request=GetCapabilities&version=1.0.0`;
+        return fetch(capsUrl)
+          .then(r => r.text())
+          .then(txt => {
+            const caps = new ol.format.WMTSCapabilities().read(txt);
+            const opts = ol.source.WMTS.optionsFromCapabilities(caps, { layer: cfg.layer, matrixSet: cfg.matrixSet, format: cfg.format, style: cfg.style });
+            return new ol.layer.Tile({ source: new ol.source.WMTS(opts) });
+          })
+          .catch(() => new ol.layer.Tile({ source: new ol.source.XYZ({ url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png' }) }));
+      }
+      createIgnBase().then(layer => map.addLayer(layer));
+
+      // Capa vectorial
+      const vectorSource = new ol.source.Vector();
+      const vectorLayer = new ol.layer.Vector({ source: vectorSource });
+      vectorLayer.setZIndex(1000); map.addLayer(vectorLayer);
+
+      // ===== Icono tipo "gota" SVG con color por tipo =====
+      function pinStyle(fill, stroke){
+        const svg = `<?xml version='1.0' encoding='UTF-8'?>
+        <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'>
+          <defs>
+            <filter id='s' x='-50%' y='-50%' width='200%' height='200%'>
+              <feDropShadow dx='0' dy='1' stdDeviation='0.8' flood-color='black' flood-opacity='0.35'/>
+            </filter>
+          </defs>
+          <g filter='url(#s)'>
+            <path d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z' fill='${fill}' stroke='${stroke}' stroke-width='1.2'/>
+            <circle cx='12' cy='9.5' r='2.6' fill='white' fill-opacity='0.9'/>
+          </g>
+        </svg>`;
+        const uri = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+        return new ol.style.Style({ image: new ol.style.Icon({ src: uri, anchor: [0.5, 1], anchorXUnits:'fraction', anchorYUnits:'fraction' }) });
+      }
+
+      const featuresById = new Map();
+      function addMarker(a){
+        const c = getTypeColor(a.tipo);
+        const f = new ol.Feature({ geometry: new ol.geom.Point(ol.proj.fromLonLat([a.lon, a.lat])), data: a });
+        f.setStyle(pinStyle(c.fill, c.stroke));
+        featuresById.set(a.id, f); vectorSource.addFeature(f);
+      }
+
+      LODGINGS.forEach(addMarker);
+      if (vectorSource.getFeatures().length > 0){
+        map.getView().fit(vectorSource.getExtent(), { padding: [24,24,24,24], maxZoom: 15 });
+      }
+
+      // Popup simple (nombre + web)
+      const overlayEl = document.createElement('div');
+      overlayEl.className = 'popup';
+      const overlay = new ol.Overlay({ element: overlayEl, offset: [0, -10], positioning: 'bottom-center' });
+      map.addOverlay(overlay);
+
+      function openPopup(f){
+        const a = f.get('data');
+        const web = a.web ? `<br><a href="${a.web}" target="_blank" rel="noopener" class="small">Web</a>` : '';
+        overlayEl.innerHTML = `<strong>${a.nombre}</strong>${web}`;
+        overlay.setPosition(f.getGeometry().getCoordinates());
+      }
+
+      map.on('singleclick', (evt) => {
+        const feat = map.forEachFeatureAtPixel(evt.pixel, f => f, { hitTolerance: 8 });
+        if (feat) openPopup(feat);
+      });
+
+      // Lista → mapa
+      document.getElementById('lodging-list').addEventListener('click', (e) => {
+        const li = e.target.closest('li'); if (!li) return; const id = Number(li.dataset.id);
+        const f = featuresById.get(id); if (!f) return; const c = f.getGeometry().getCoordinates();
+        map.getView().animate({ center: c, zoom: 15, duration: 400 });
+        openPopup(f);
+      });
+
+      // Botón flotante → fit
+      document.getElementById('btnFitFloating').addEventListener('click', () => {
+        if (vectorSource.getFeatures().length > 0){
+          map.getView().fit(vectorSource.getExtent(), { padding: [24,24,24,24], maxZoom: 15 });
+        }
+      });
+    })();
+
+    // Año dinámico
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+<button id="btnBackTop">↑ Arriba</button><script>
+// ====== Back to top ======
+(function backToTop(){
+  const btn = document.getElementById('btnBackTop');
+  if(!btn) return;
+  function onScroll(){ btn.classList.toggle('show', window.scrollY > 400); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', (e)=>{ e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); });
+})();
+</script>
+
+</body>
+</html>
